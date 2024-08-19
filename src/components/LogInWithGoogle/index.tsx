@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 
 
 const LogInWithGoogle: React.FC = () => {
-  
+  const [renderGoogle] = useState<Boolean>(!document.getElementById('google-gsi-client'));
   
 
   return (
     <>
       <Helmet>
-        <script src="https://accounts.google.com/gsi/client" async></script>
+        {renderGoogle && <script id="google-gsi-client" src="https://accounts.google.com/gsi/client" async></script>}
       </Helmet>
 
       <div id="g_id_onload"

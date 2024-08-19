@@ -47,4 +47,9 @@ export default defineConfig({
       ],
     },
   },
+  server: {
+    port: 3110,
+    strictPort: true,
+    open: true
+  }
 });
