@@ -1,15 +1,8 @@
-import './App.css'
+import '@/styles/recipe-helper.scss';
+import HomePage from './pages';
 
 function App() {
-  return (
-    <>
-      <h1>Recipe Helper</h1>
-      <span className="secondary">Development Preview</span>
-
-      <div className="card">
-      </div>
-    </>
-  )
+  return (<HomePage />)
 }
 
 export default App
