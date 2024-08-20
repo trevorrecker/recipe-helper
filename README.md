@@ -4,4 +4,4 @@ This is a simple front-end application for Recipe Helper, a recipe storage and m
 
 Create recipes, track changes as they evolve, and get feedback and suggestions on different recipe experiments.
 
-Recipe Helper is a React, Vite application.
+Recipe Helper is a React, Next.js application.
