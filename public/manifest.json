@@ -1,0 +1,10 @@
+{
+  "name": "Recipe Helper",
+  "short_name": "Recipe Helper",
+  "icons": [],
+  "theme_color": "#F39716",
+  "background_color": "#C0E3F8",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
