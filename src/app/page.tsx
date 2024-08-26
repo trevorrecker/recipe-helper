@@ -1,20 +1,43 @@
 "use client";
 
-import Link from "next/link";
-import styles from "./styles.module.scss";
+import Header from "@/components/Header";
+import ThemeModeToggle from "@/components/ThemeModeToggle";
+import {
+  Badge,
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  Chip,
+  Container,
+  Link,
+  Stack,
+  Typography
+} from "@mui/material";
 
 export default function HomePage() {
   return (
-    <div className={styles.container}>
+    <Container>
+      <Header />
       <h1>Recipe Helper</h1>
 
-      <div className="secondary">
-        Development Preview v{process.env.NEXT_PUBLIC_PACKAGE_VERSION}
-      </div>
-      <div className="secondary">{process.env.NEXT_PUBLIC_ENV_NAME}</div>
-      <div style={{ marginTop: "2rem" }}>
-        <Link href="/login">Log In</Link>
-      </div>
-    </div>
+      <Card>
+        <CardContent>
+          <Stack direction="row" gap={1}>
+            <Typography variant="h5" sx={{}}>
+              Development Preview
+            </Typography>
+            <Chip
+              color="info"
+              label={`v${process.env.NEXT_PUBLIC_PACKAGE_VERSION}`}
+            />
+            <Chip
+              color="default"
+              label={`${process.env.NEXT_PUBLIC_ENV_NAME}`}
+            />
+          </Stack>
+        </CardContent>
+      </Card>
+    </Container>
   );
 }
