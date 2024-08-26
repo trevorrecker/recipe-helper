@@ -1,10 +1,13 @@
-import "@/app/_styles/recipe-helper.scss";
-import ClientSide from "@/components/ClientSide";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import ClientWrapper from "@/components/ClientWrapper";
+import type { Metadata, Viewport } from "next";
 import React from "react";
+import COLORS from "@/settings/colors";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 
-const inter = Inter({ subsets: ["latin"] });
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/700.css";
 
 const APP_NAME = "Recipe Helper";
 const APP_DEFAULT_TITLE = "Recipe Helper - Your AI Baking Assistant";
@@ -55,15 +58,26 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  themeColor: COLORS.light.primary,
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false
+};
+
 export default function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ClientSide>{children}</ClientSide>
+    <html suppressHydrationWarning lang="en">
+      <body>
+        <InitColorSchemeScript />
+        <main>
+          <ClientWrapper>{children}</ClientWrapper>
+        </main>
       </body>
     </html>
   );
