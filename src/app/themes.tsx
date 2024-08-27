@@ -94,7 +94,7 @@ export const lightTheme: Theme = createTheme(lightThemeOptions);
 export const darkTheme: Theme = createTheme(darkThemeOptions);
 
 export default extendTheme({
-  cssVarPrefix: "recipe",
+  cssVarPrefix: "rh",
   colorSchemes: {
     light: lightThemeOptions,
     dark: darkThemeOptions

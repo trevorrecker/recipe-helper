@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import React from "react";
 import COLORS from "@/settings/colors";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
+import Header from "@/components/Header";
 
 import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
@@ -76,7 +77,10 @@ export default function RootLayout({
       <body>
         <InitColorSchemeScript />
         <main>
-          <ClientWrapper>{children}</ClientWrapper>
+          <ClientWrapper>
+            <Header />
+            {children}
+          </ClientWrapper>
         </main>
       </body>
     </html>

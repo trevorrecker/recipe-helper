@@ -21,7 +21,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack']
+    });
+
+    return config;
+  }
 };
+
 
 const nextConfigFunction = async (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
