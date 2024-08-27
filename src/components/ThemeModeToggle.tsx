@@ -1,3 +1,5 @@
+"use client";
+
 import { DarkModeTwoTone, LightModeTwoTone } from "@mui/icons-material";
 import { Button, useColorScheme } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -18,7 +20,7 @@ const ThemeModeToggle: React.FC = () => {
     onClient && (
       <Button variant="outlined" color="inherit" onClick={handleThemeClick}>
         <ThemeIcon sx={{ marginRight: 1, marginLeft: -0.5 }} />
-        {`${mode?.charAt(0).toUpperCase()}${mode?.slice(1)}`} Theme
+        {mode === "light" ? "Light" : "Dark"} Theme
       </Button>
     )
   );
